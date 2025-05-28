@@ -4,6 +4,7 @@ class Solution {
         if(p==null) return head;
         p=p.next;
         ListNode head2=null;
+        ListNode t2=null;
         int node=1;
         while(p!=null) {
             int data=0;
@@ -13,11 +14,12 @@ class Solution {
             }
             p=p.next;
             ListNode t=new ListNode(data);
-            ListNode t2=head2;
-            if(node==1) head2=t;
-            else {
-                while(t2.next!=null) t2=t2.next;
+            if(node==1) {
+                head2=t;
+                t2=head2;
+            } else {
                 t2.next=t;
+                t2=t2.next;
             }
             node++;
         }
