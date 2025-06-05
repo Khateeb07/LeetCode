@@ -14,10 +14,10 @@ class Solution {
         }
         int result=0;
         while(i<n && s.charAt(i)>='0' && s.charAt(i)<='9') {
-            int num=s.charAt(i)-'0';
-            if(result>(Integer.MAX_VALUE-num)/10)
+            int digit=s.charAt(i)-'0';
+            if(result>(Integer.MAX_VALUE-digit)/10)
                 return (sign==1)?Integer.MAX_VALUE:Integer.MIN_VALUE;
-            result=result*10+num;
+            result=result*10+digit;
             i++;
         }
         return (int)(sign*result);
